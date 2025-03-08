@@ -10,3 +10,4 @@ local.properties
 *.ap_
 .DS_Store
 *.swp
+.idea/
