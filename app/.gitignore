@@ -1,0 +1,12 @@
+/.idea/
+*.iml
+/build/
+/app/build/
+/.gradle/
+local.properties
+*.log
+*.apk
+*.aar
+*.ap_
+.DS_Store
+*.swp
