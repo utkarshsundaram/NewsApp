@@ -4,6 +4,8 @@ import android.content.Context
 import com.utkarshsundaram.newsapp.application.NewsApp
 import com.utkarshsundaram.newsapp.data.remote.NetworkServices
 import com.utkarshsundaram.newsapp.data.remote.NewsAppInterceptors
+import com.utkarshsundaram.newsapp.data.repository.NewsRepository
+import com.utkarshsundaram.newsapp.data.repository.NewsRepositoryImpl
 import com.utkarshsundaram.newsapp.di.qualifiers.ApplicationContext
 import com.utkarshsundaram.newsapp.di.qualifiers.BaseUrl
 import dagger.Module
@@ -41,7 +43,7 @@ class ApplicationModule(private val application:NewsApp) {
             .build()
     }
     @Provides
-    fun provideNewsApi(
+    fun provideNetworkService(
         @BaseUrl baseUrl: String,
         gsonConverterFactory: GsonConverterFactory,
         okHttpClient: OkHttpClient
@@ -52,5 +54,9 @@ class ApplicationModule(private val application:NewsApp) {
             .addConverterFactory(gsonConverterFactory)
             .build()
             .create(NetworkServices::class.java)
+    }
+    @Provides
+    fun provideNewsRepository(newsApi: NetworkServices): NewsRepository {
+        return NewsRepositoryImpl(newsApi)
     }
 }
