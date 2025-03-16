@@ -1,6 +1,5 @@
 package com.utkarshsundaram.newsapp.data.remote
 
-import com.utkarshsundaram.newsapp.BuildConfig
 import com.utkarshsundaram.newsapp.data.model.NewsResponse
 import retrofit2.Response
 import retrofit2.http.GET

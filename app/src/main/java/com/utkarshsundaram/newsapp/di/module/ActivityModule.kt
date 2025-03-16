@@ -1,19 +1,15 @@
 package com.utkarshsundaram.newsapp.di.module
 
 import android.content.Context
-import dagger.Module
-import dagger.Provides
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.ViewModelProvider
-import com.utkarshsundaram.newsapp.data.remote.NetworkServices
 import com.utkarshsundaram.newsapp.data.repository.NewsRepository
-import com.utkarshsundaram.newsapp.data.repository.NewsRepositoryImpl
 import com.utkarshsundaram.newsapp.di.qualifiers.ActivityContext
-import com.utkarshsundaram.newsapp.domain.GetNewsListUseCase
 import com.utkarshsundaram.newsapp.domain.GetNewsListUseCaseImpl
 import com.utkarshsundaram.newsapp.ui.base.ViewModelProviderFactory
 import com.utkarshsundaram.newsapp.ui.viewmodel.NewsViewModel
-import javax.inject.Singleton
+import dagger.Module
+import dagger.Provides
 
 @Module
 class ActivityModule(private val activity: ComponentActivity) {

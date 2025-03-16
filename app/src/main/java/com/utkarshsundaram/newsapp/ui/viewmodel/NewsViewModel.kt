@@ -3,7 +3,6 @@ package com.utkarshsundaram.newsapp.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.utkarshsundaram.newsapp.data.model.NewsState
-import com.utkarshsundaram.newsapp.domain.GetNewsListUseCase
 import com.utkarshsundaram.newsapp.domain.GetNewsListUseCaseImpl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
