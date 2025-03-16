@@ -7,6 +7,6 @@ import dagger.Component
 
 @ActivityScope
 @Component(dependencies = [ApplicationComponent::class], modules = [ActivityModule::class])
-interface AppComponent {
+interface ActivityComponent {
     fun inject(app: NewsListActivity)
 }

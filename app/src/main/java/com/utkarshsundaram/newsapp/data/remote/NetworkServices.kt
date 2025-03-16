@@ -11,7 +11,6 @@ import javax.inject.Singleton
 interface NetworkServices {
     @GET("top-headlines")
     suspend fun getTopHeadlines(
-        @Query("country") country: String = "us",
-        @Query("apiKey") apiKey: String = BuildConfig.NEWS_API_KEY
+        @Query("country") country: String = "us"
     ): Response<NewsResponse>
 }

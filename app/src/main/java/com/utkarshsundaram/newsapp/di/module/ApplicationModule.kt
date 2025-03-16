@@ -42,6 +42,7 @@ class ApplicationModule(private val application:NewsApp) {
             .addInterceptor(appInterceptors)
             .build()
     }
+    @Singleton
     @Provides
     fun provideNetworkService(
         @BaseUrl baseUrl: String,
@@ -55,8 +56,9 @@ class ApplicationModule(private val application:NewsApp) {
             .build()
             .create(NetworkServices::class.java)
     }
+    @Singleton
     @Provides
-    fun provideNewsRepository(newsApi: NetworkServices): NewsRepository {
-        return NewsRepositoryImpl(newsApi)
+    fun provideNewsRepository(networkServices: NetworkServices): NewsRepository {
+        return NewsRepositoryImpl(networkServices)
     }
 }
